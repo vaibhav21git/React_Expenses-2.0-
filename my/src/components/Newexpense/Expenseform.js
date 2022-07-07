@@ -13,7 +13,7 @@ function Expenseform(props) {
      setcurramt(event.target.value); 
    };
 
-   function toggle() {
+   function toggle(){
        props.decide();
    }
   
@@ -43,6 +43,7 @@ function Expenseform(props) {
        setcurramt('');
        setcurrtitle('');
        setcurrdate('');
+       props.decide();
   }
 
 

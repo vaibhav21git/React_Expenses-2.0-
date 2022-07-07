@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import './Expenses.css'
 import Card from '../UI/Card'
-import Expenseitem from './Expenseitem';
 import Expensesfilter from './Expensefilter';
+import Expenselist from './Expenselist';
 
 // here card is used as a parent of all because all components
 // are present inside the card to reomve repitition in css by
@@ -29,7 +29,7 @@ function Expenses(props) {
         <div>
       <Card className='expenses'>
       <Expensesfilter selected = {curryear} onChangeyear = {viewyear}/>
-      {expensecontent}
+      <Expenselist item  = {filteredexpenses}/>
       </Card>
       </div>
       );

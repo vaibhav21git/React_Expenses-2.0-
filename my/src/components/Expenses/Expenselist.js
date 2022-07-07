@@ -2,24 +2,26 @@ import React from 'react'
 import Expenseitem from './Expenseitem';
 import './Expenselist.css'
 
-function Expenselist() {
+function Expenselist(props) {
+
+       if(props.item.length === 0)
+       {
+          return <h2 className='expenses-list__fallback'>No expenses found</h2>
+       }  
+     
 
 
-    
-    let expensecontent = <p>No expenses found</p>;
-    if(filteredexpenses.length > 0)
-    {
-      expensecontent =  filteredexpenses.map((expense)=><Expenseitem 
+  return (<ul className='expenselist'>
+       {props.item.map((expense) =>(
+      <Expenseitem 
       key = {expense.id} 
       id  = {expense.id} 
       title  ={expense.title}
       amount = {expense.amount} 
-      date  = {expense.date}/>)
-    }
-
-
-  return (
-    <div>Expenselist</div>
+      date  = {expense.date}
+      />
+       ))}
+    </ul>
   )
 }
 

@@ -12,6 +12,10 @@ function Expenseform(props) {
    const amtchangehandler = (event) => {
      setcurramt(event.target.value); 
    };
+
+   function toggle() {
+       props.decide();
+   }
   
    const titlechangehandler = (event) => {
     setcurrtitle(event.target.value); 
@@ -62,6 +66,10 @@ function Expenseform(props) {
         
         <div className='new-expense__actions'>
             <button type = 'submit'>Add expense </button>
+        </div>
+
+        <div className='new-expense__actions'>
+            <button onClick = {toggle} type = 'submit'>Cancel</button>
         </div>
     </div>
   </form>

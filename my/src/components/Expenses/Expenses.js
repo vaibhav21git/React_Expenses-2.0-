@@ -3,6 +3,7 @@ import './Expenses.css'
 import Card from '../UI/Card'
 import Expensesfilter from './Expensefilter';
 import Expenselist from './Expenselist';
+import Expensechart from './Expensechart'
 
 // here card is used as a parent of all because all components
 // are present inside the card to reomve repitition in css by
@@ -29,6 +30,7 @@ function Expenses(props) {
         <div>
       <Card className='expenses'>
       <Expensesfilter selected = {curryear} onChangeyear = {viewyear}/>
+      <Expensechart  expenses  = {filteredexpenses} />
       <Expenselist item  = {filteredexpenses}/>
       </Card>
       </div>
